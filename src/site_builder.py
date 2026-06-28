@@ -2,7 +2,7 @@ import markdown as md
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-from .config import BASE_URL, CONTENT_DIR, SITE_DIR, SITE_NAME, SITE_POSTS_DIR, TEMPLATES_DIR
+from .config import BASE_URL, CONTENT_DIR, SITE_DIR, SITE_NAME, SITE_ORIGIN, SITE_POSTS_DIR, TEMPLATES_DIR
 
 _env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
 
@@ -54,7 +54,8 @@ def build_site() -> dict:
 
 
 def _write_sitemap(posts: list[dict]) -> None:
-    urls = [f"{BASE_URL}/"] + [f"{BASE_URL}/posts/{p['slug']}/" for p in posts]
+    base = f"{SITE_ORIGIN}{BASE_URL}"
+    urls = [f"{base}/"] + [f"{base}/posts/{p['slug']}/" for p in posts]
     body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
     (SITE_DIR / "sitemap.xml").write_text(xml, encoding="utf-8")

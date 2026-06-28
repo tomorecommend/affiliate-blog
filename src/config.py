@@ -19,6 +19,9 @@ GENRES_FILE = ROOT_DIR / "config" / "genres.yaml"
 # 必ずこのBASE_URLを起点にする(将来カスタムドメイン化する際もここを変えるだけで済む)
 BASE_URL = os.getenv("BASE_URL", "/affiliate-blog")
 
+# sitemap.xml等、絶対URLが必須な箇所で使う(独自ドメイン化する際はここを変更する)
+SITE_ORIGIN = os.getenv("SITE_ORIGIN", "https://tomorecommend.github.io")
+
 SITE_NAME = os.getenv("SITE_NAME", "ニッチ商品お得情報ブログ")
 
 
