@@ -1,0 +1,15 @@
+body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; line-height: 1.8; color: #222; }
+.site-header { font-weight: bold; font-size: 1.2em; margin-bottom: 16px; }
+.site-header a { color: #222; text-decoration: none; }
+.post-meta, .post-list-meta { color: #888; font-size: 0.85em; }
+.pr-disclosure { color: #b00; font-size: 0.85em; }
+.product-card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; text-align: center; }
+.product-card img { max-width: 100%; height: auto; }
+.product-price { font-size: 1.3em; font-weight: bold; color: #c33; }
+.btn { display: inline-block; padding: 10px 24px; border-radius: 4px; color: #fff; text-decoration: none; margin-top: 8px; }
+.btn-rakuten { background: #bf0000; }
+.btn-amazon { background: #ff9900; }
+.amazon-cta { text-align: center; margin: 24px 0; }
+.post-list { list-style: none; padding: 0; }
+.post-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+.site-footer { color: #888; font-size: 0.8em; margin-top: 32px; text-align: center; }

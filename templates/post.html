@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block description %}{{ post.meta_description }}{% endblock %}
+{% block content %}
+<article class="post">
+  <h1>{{ post.title }}</h1>
+  <p class="post-meta">{{ post.date }} / {{ post.genre }}</p>
+  <p class="pr-disclosure">本記事はアフィリエイトリンクを含みます(PR)。</p>
+
+  <div class="product-card">
+    {% if post.product_image %}<img src="{{ post.product_image }}" alt="{{ post.product_name }}">{% endif %}
+    <h2 class="product-name">{{ post.product_name }}</h2>
+    <p class="product-price">{{ "{:,}".format(post.product_price) }}円(税込・参考価格)</p>
+    <a class="btn btn-rakuten" href="{{ post.product_url }}" rel="nofollow sponsored" target="_blank">楽天市場で見る</a>
+  </div>
+
+  {{ post.body_html | safe }}
+
+  <div class="amazon-cta">
+    <a class="btn btn-amazon" href="{{ post.amazon_search_link }}" rel="nofollow sponsored" target="_blank">Amazonで探す</a>
+  </div>
+</article>
+{% endblock %}

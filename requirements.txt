@@ -1,0 +1,6 @@
+google-genai
+python-dotenv
+requests
+Jinja2
+PyYAML
+Markdown
