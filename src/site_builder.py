@@ -2,9 +2,10 @@ import markdown as md
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-from .config import BASE_URL, CONTENT_DIR, SITE_DIR, SITE_NAME, SITE_ORIGIN, SITE_POSTS_DIR, TEMPLATES_DIR
+from .config import BASE_URL, CONTENT_DIR, GA_MEASUREMENT_ID, SITE_DIR, SITE_NAME, SITE_ORIGIN, SITE_POSTS_DIR, TEMPLATES_DIR
 
 _env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
+_env.globals["ga_measurement_id"] = GA_MEASUREMENT_ID
 
 
 def _parse_post(md_path) -> dict:

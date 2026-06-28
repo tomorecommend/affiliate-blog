@@ -7,6 +7,13 @@
 <meta name="description" content="{% block description %}{{ site_name }}{% endblock %}">
 <meta name="google-site-verification" content="dfDlKnKQLDON6P3HuHjJEh4Y_U6xK0ZabMyPpsUA7fo" />
 <link rel="stylesheet" href="{{ base_url }}/static/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_measurement_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ ga_measurement_id }}');
+</script>
 </head>
 <body>
 <header class="site-header">
