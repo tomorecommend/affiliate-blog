@@ -7,7 +7,7 @@ load_dotenv()
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT_DIR / "content" / "posts"
-SITE_DIR = ROOT_DIR / "site"
+SITE_DIR = ROOT_DIR / "docs"
 SITE_POSTS_DIR = SITE_DIR / "posts"
 TEMPLATES_DIR = ROOT_DIR / "templates"
 DATA_DIR = ROOT_DIR / "data"
